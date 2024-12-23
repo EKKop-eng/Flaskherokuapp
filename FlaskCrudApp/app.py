@@ -53,4 +53,7 @@ def delete_item(id):
     return render_template('delete.html', item=item)
 
 if __name__ == '__main__':
+    # Create database tables if not already created (useful for local testing)
+    with app.app_context():
+        db.create_all()
     app.run(debug=True)
