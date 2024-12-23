@@ -1,0 +1,15 @@
+
+{% extends "base.html" %}
+{% block content %}
+<h1>All Items</h1>
+<a href="{{ url_for('add_item') }}">Create New Item</a>
+<ul>
+    {% for item in items %}
+    <li>
+        {{ item.name }} 
+        <a href="{{ url_for('edit_item', id=item.id) }}">Edit</a> | 
+        <a href="{{ url_for('delete_item', id=item.id) }}">Delete</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
