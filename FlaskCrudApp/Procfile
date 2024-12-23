@@ -1,1 +1,1 @@
-web: gunicorn infinite-springs-23588:application
+web: gunicorn Flaskherokuapp:application
